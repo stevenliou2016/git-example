@@ -576,7 +576,7 @@ static const yytype_uint8 yytranslate[] =
   /* YYRLINE[YYN] -- Source line where rule number YYN was defined.  */
 static const yytype_uint8 yyrline[] =
 {
-       0,    81,    81,    99,   103,   122,   126,   130,   134,   138
+       0,    81,    81,    99,   103,   110,   114,   118,   122,   126
 };
 #endif
 
@@ -1386,13 +1386,13 @@ yyreduce:
 #line 104 "parser.y" /* yacc.c:1646  */
     {
 		(yyval.basicType)=(yyvsp[0].basicType);
-		cout << (yyvsp[0].basicType).integer << " exp" << endl;
+		cout << (yyvsp[0].basicType) << " exp" << endl;
 	}
 #line 1392 "parser.c" /* yacc.c:1646  */
     break;
 
   case 5:
-#line 123 "parser.y" /* yacc.c:1646  */
+#line 111 "parser.y" /* yacc.c:1646  */
     {
 		(yyval.basicType).integer=(yyvsp[0].integer);
 	  }
@@ -1400,7 +1400,7 @@ yyreduce:
     break;
 
   case 6:
-#line 127 "parser.y" /* yacc.c:1646  */
+#line 115 "parser.y" /* yacc.c:1646  */
     {
 		(yyval.basicType).real=(yyvsp[0].real);
 	  }
@@ -1408,7 +1408,7 @@ yyreduce:
     break;
 
   case 7:
-#line 131 "parser.y" /* yacc.c:1646  */
+#line 119 "parser.y" /* yacc.c:1646  */
     {
 		(yyval.basicType).string=(yyvsp[0].string);
 	  }
@@ -1416,7 +1416,7 @@ yyreduce:
     break;
 
   case 8:
-#line 135 "parser.y" /* yacc.c:1646  */
+#line 123 "parser.y" /* yacc.c:1646  */
     {
 		(yyval.basicType).integer=1;
 	  }
@@ -1424,7 +1424,7 @@ yyreduce:
     break;
 
   case 9:
-#line 139 "parser.y" /* yacc.c:1646  */
+#line 127 "parser.y" /* yacc.c:1646  */
     {
 		(yyval.basicType).integer=0;
 	  }
@@ -1660,7 +1660,7 @@ yyreturn:
 #endif
   return yyresult;
 }
-#line 177 "parser.y" /* yacc.c:1906  */
+#line 165 "parser.y" /* yacc.c:1906  */
 
 void yyerror(char *s)
 {
