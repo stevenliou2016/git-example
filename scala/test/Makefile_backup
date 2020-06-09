@@ -1,0 +1,17 @@
+parser: scanner.o parser.o tokens.o symbolTable.o
+	g++ -g scanner.o parser.o tokens.o symbolTable.o -ll -ly -o parser
+scanner.o: scanner.c
+	g++ -g -c -o scanner.o scanner.c
+parser.o: parser.c
+	g++ -g -c -o parser.o parser.c
+tokens.o: tokens.c
+	g++ -g -c -o tokens.o tokens.c
+symbolTable.o: symbolTable.c
+	g++ -g -c -o symbolTable.o symbolTable.c
+parser.c: parser.y
+	yacc parser.y --output=parser.c --defines=parser.h
+scanner.c: scanner.l parser.h
+	lex -o scanner.c scanner.l
+parser.h:
+	yacc parser.y --output=parser.c --defines=parser.h
+

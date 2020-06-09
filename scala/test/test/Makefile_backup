@@ -1,0 +1,12 @@
+parser:scanner.o parser.o
+	g++ scanner.o parser.o -o parser
+scanner.o:scanner.c
+	g++ -c -o scanner.o scanner.c
+parser.o:parser.c
+	g++ -c -o parser.o parser.c
+scanner.c:scanner.l parser.h
+	lex -o scanner.c scanner.l
+parser.c:parser.y
+	yacc parser.y --output=parser.c --defines=parser.h
+parser.h:
+	yacc parser.y --output=parser.c --defines=parser.h
